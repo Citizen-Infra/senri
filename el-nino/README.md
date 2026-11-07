@@ -41,7 +41,7 @@ Then open <http://localhost:8000/el-nino/>.
 
 The problem map originated in
 [MaxSemenchuk/el-nino-problem-map](https://github.com/MaxSemenchuk/el-nino-problem-map)
-and was moved into SENRI by its author, Max Semenchuk. See `docs/METHODOLOGY.md` and
+and was moved into SENRI by its author, Max Semenchuk. Group strategy and open questions: [`docs/el-nino/strategy/STRATEGY.md`](../docs/el-nino/strategy/STRATEGY.md). See `docs/METHODOLOGY.md` and
 `docs/SOURCES.md` for its framing and evidence limits.
 
 ## Updating source snapshots
