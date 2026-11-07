@@ -114,4 +114,3 @@ focused pull request, explain the failure or ambiguity the change addresses,
 and invite maintainers and community contributors to review it. Add local
 `AGENTS.md` files only when a folder genuinely needs more specific rules; do not
 copy this file into every directory.
-
