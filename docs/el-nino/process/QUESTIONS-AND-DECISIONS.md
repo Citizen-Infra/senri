@@ -28,18 +28,23 @@ product truth held in [`../spec/`](../spec/).
 | D-004 | Accounts, profiles, communities, contributions, matches, plans, tasks, assignments, and locations are distinct durable entities | [Issue 14](https://github.com/Citizen-Infra/senri/issues/14) | Product, flow, data |
 | D-005 | Identity is private by default; trust and moderation are contextual, consent-based, distributed, appealable, and GDPR-aligned | [Issue 15](https://github.com/Citizen-Infra/senri/issues/15) | Product, flow, data, design |
 | D-006 | One routed product keeps separate OSIRIS and coordination runtimes, independent pins, additive migration, and independent rollback | [Issue 17](https://github.com/Citizen-Infra/senri/issues/17) | Tech, plan |
-| D-007 | The six App Spec documents are approved sequentially; Wayfinder holds decisions and pull requests change the shared truth | [Draft foundation PR](https://github.com/Citizen-Infra/senri/pull/20) | Collaboration process |
+| D-008 | There is no allocated cash budget; work uses available surplus token, compute or energy, and contributor capacity, and paid commitments need a separate decision | [Wayfinder session digest](https://github.com/Citizen-Infra/senri/issues/10#issuecomment-6709365711) | Product, tech, plan |
+
+## Proposed decisions
+
+| ID | Proposal | Review record | Affects |
+|---|---|---|---|
+| D-007 | Approve the six App Spec documents sequentially; keep decisions in Wayfinder and change shared truth through pull requests | [Draft foundation PR](https://github.com/Citizen-Infra/senri/pull/20) | Collaboration process |
 
 ## Open questions
 
 | ID | Question and recommended answer | Owner | Needed by | Discussion |
 |---|---|---|---|---|
-| Q-001 | **Pilot budget:** set no amount until the technical requirements are known; minimize recurring cost and require explicit approval for paid commitments | Product and technical stewards | Product approval | [Draft foundation PR](https://github.com/Citizen-Infra/senri/pull/20) |
 | Q-002 | **Pilot communities:** name two or three communities and one or more local stewards for each | Product steward and community representatives | Product approval | [Issue 19](https://github.com/Citizen-Infra/senri/issues/19) |
 | Q-003 | **Languages and accessibility:** choose first-release languages and accessibility-testing participants with the pilot communities | Community and design representatives | Product approval | [Issue 19](https://github.com/Citizen-Infra/senri/issues/19) |
 | Q-004 | **Concrete journeys:** validate the smallest map, list, contribution, match, plan, task, contact, and moderation flows with disposable prototypes | Product and design stewards | App Flow approval | [Issue 16](https://github.com/Citizen-Infra/senri/issues/16) |
 | Q-005 | **Technical thresholds:** set the exact stack, EU or EEA processors, performance, reliability, observability, cost, and rollback targets | Technical and privacy stewards | Technical approval | [Issue 18](https://github.com/Citizen-Infra/senri/issues/18) |
-| Q-006 | **Data schedule:** specify field-level purpose, legal basis, access, retention, export, deletion, anonymization, and backup behavior | Privacy and technical stewards | Data approval | [Issue 15](https://github.com/Citizen-Infra/senri/issues/15) |
+| Q-006 | **Data schedule:** specify field-level purpose, legal basis, access, retention, export, deletion, anonymization, and backup behavior | Privacy and technical stewards | Data approval | [Issue 21](https://github.com/Citizen-Infra/senri/issues/21) |
 | Q-007 | **Visual system:** choose the map and coordination hierarchy, accessible tokens, interaction states, and mobile treatments | Design and community representatives | Design approval | [Issue 16](https://github.com/Citizen-Infra/senri/issues/16) |
 | Q-008 | **Delivery slices:** derive independently verifiable pull requests, ownership, dependencies, evidence, and rollback from the five approved design documents | Product and technical stewards | Plan approval | [Issue 18](https://github.com/Citizen-Infra/senri/issues/18) |
 
@@ -66,4 +71,3 @@ session's main question:
 ### Next gate
 - <one observable approval or evidence requirement>
 ```
-

@@ -52,7 +52,7 @@ interviews with participants and local stewards.
 | F8 | Distributed governance and moderation | Community steward | Must | Communities apply their own published rules above a small common safety floor, with proportionate action and an appeal path |
 | F9 | User-controlled notifications | Participant | Should | Digest is the default; immediate notifications occur only for user-selected events and never imply emergency alerting |
 | F10 | Mobile, low-bandwidth, and degraded-network use | Participant | Should | Core discovery and coordination work on mobile, with offline drafts that can synchronize later |
-| F11 | Portable signed trust evidence | Participant, steward | Later | Trust records can be exported and independently checked without requiring a blockchain |
+| F11 | Portable signed trust evidence | Participant, steward | Should | Trust records can be exported and independently checked without requiring a blockchain |
 | F12 | Optional blockchain anchoring | Ecosystem steward | Later | A separately approved privacy and governance case demonstrates practical value before integration |
 
 ## Product rules
@@ -118,8 +118,9 @@ interviews with participants and local stewards.
   migration is separately approved.
 - The coordination platform and D1 remain the durable system of record; OSIRIS
   is pinned and connected through a versioned public-map adapter.
-- Budget: `TBD(approve a pilot operating and infrastructure budget)`.
+- Resources: there is no allocated cash budget. Work within available surplus
+  token, compute or energy, and contributor capacity; any paid commitment needs
+  a separate explicit decision.
 - Pilot participants: `TBD(name two or three communities and their local stewards)`.
 - First-release languages and accessibility testing participants:
   `TBD(select these with the pilot communities)`.
-

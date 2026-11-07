@@ -1,16 +1,18 @@
 # SENRI El Niño app specification
 
-This directory is the canonical product specification for the OSIRIS-backed
+This directory contains the proposed product specification for the OSIRIS-backed
 community coordination product. It is deliberately separate from the existing
-El Niño problem map, the imported coordination application, and the pinned
-OSIRIS source. A specification decision does not authorize implementation,
-deployment, repository archival, or a merge.
+El Niño problem map and from the proposed coordination-platform and pinned
+OSIRIS import boundaries. A document becomes authoritative only after its
+stated review gate and merge; draft content remains a proposal. A specification
+decision does not authorize implementation, deployment, repository archival, or
+a merge.
 
 ## Source-of-truth model
 
 | Artifact | Purpose | Must not contain |
 |---|---|---|
-| [`docs/spec/`](./) | Current approved product behavior and delivery boundary | Private participant or moderation data |
+| [`docs/el-nino/spec/`](./) | Current approved product behavior and delivery boundary | Private participant or moderation data |
 | [Wayfinder map](https://github.com/Citizen-Infra/senri/issues/10) | Decision history, dependencies, and unresolved questions | Duplicate product specifications |
 | [`QUESTIONS-AND-DECISIONS.md`](../process/QUESTIONS-AND-DECISIONS.md) | Navigable index of accepted decisions, open questions, owners, and review gates | Full duplicate decision text or raw chat transcripts |
 | SENRI issues | One bounded decision, research task, prototype, or implementation slice | Personal data, private reports, or sensitive cases |
@@ -62,4 +64,3 @@ The shared-repository workflow is defined in
 [`../process/COLLABORATION.md`](../process/COLLABORATION.md). The handoff from an
 approved specification to Potato/PStack is defined in
 [`../process/PSTACK-PLAYBOOK.md`](../process/PSTACK-PLAYBOOK.md).
-

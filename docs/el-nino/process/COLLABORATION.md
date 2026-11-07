@@ -20,7 +20,7 @@ another or confusing planning with implementation.
 
 Do not maintain competing PRDs in issue bodies, chat transcripts, external
 documents, or source repositories. Those artifacts may propose a change, but
-the accepted result must be reflected in `docs/spec/`.
+the accepted result must be reflected in `docs/el-nino/spec/`.
 
 ## Roles
 
@@ -68,11 +68,11 @@ copying checklists between multiple issues.
 7. Update affected Wayfinder decisions and specifications before declaring a
    product change complete.
 
-Docs-only changes may skip CodeRabbit because they do not change runtime
-behavior. Authentication, permissions, personal-data handling, moderation,
-database migrations, deployments, and shared core infrastructure should receive
-the full integration review in addition to deterministic checks and human
-judgment.
+Docs-only changes may skip a configured advisory integration review because
+they do not change runtime behavior. Authentication, permissions, personal-data
+handling, moderation, database migrations, deployments, and shared core
+infrastructure should receive the full integration review in addition to
+deterministic checks and human judgment.
 
 ## Specification review
 
@@ -103,4 +103,3 @@ into the repository. At the end of a substantive working session:
 
 This preserves everything needed to resume work while keeping discussion
 navigable for people and agents.
-

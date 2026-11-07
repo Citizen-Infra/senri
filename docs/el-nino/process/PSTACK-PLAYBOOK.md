@@ -30,7 +30,7 @@ is disposable; preserve the decision and evidence, not prototype code.
 Example prompt:
 
 ```text
-/poteto-mode new task. Read el-nino/docs/spec/ and prototype the smallest
+/poteto-mode new task. Read docs/el-nino/spec/ and prototype the smallest
 coordination-over-map journey that resolves <issue link>. Work in an isolated
 scratch area. Do not change product source. Compare variants with screenshots
 and accessibility notes, then recommend one and stop for review.
@@ -42,7 +42,7 @@ Only after all six documents are approved, run the Multi-phase Plan playbook.
 The plan is the deliverable; this step must not implement it.
 
 ```text
-/poteto-mode new task. Read all six files in el-nino/docs/spec/ and the linked
+/poteto-mode new task. Read all six files in docs/el-nino/spec/ and the linked
 Wayfinder map. Produce a multi-phase plan of small, independently verifiable
 pull requests. Preserve the separate OSIRIS and coordination boundaries. Give
 each PR one owner, exact scope, dependencies, deterministic checks, direct
@@ -57,7 +57,7 @@ owner designs, implements, verifies, and hands off only that slice.
 
 ```text
 /poteto-mode new task. Implement <issue link>, which is slice <S#> from
-el-nino/docs/spec/06-plan.md. Use a fresh branch and worktree. Do not change
+docs/el-nino/spec/06-plan.md. Use a fresh branch and worktree. Do not change
 unrelated SENRI content. Prove every listed acceptance criterion and stop at a
 draft pull request. Do not merge.
 ```
@@ -101,4 +101,3 @@ Every PStack prompt for this project should name:
 - repository boundaries and privacy constraints;
 - the allowed stopping point: investigation, prototype, draft PR, ready for
   review, or explicitly authorized merge.
-
