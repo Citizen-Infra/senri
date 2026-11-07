@@ -2,84 +2,61 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>El Niño 2026–27 Impact Calendar</title>
-<meta name="description" content="When and where the 2026–27 El Niño hits: event phases and regional impacts on one timeline, with a marker for today.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
-<link rel="stylesheet" href="calendar.css">
-<link rel="stylesheet" href="nav.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SENRI · El Niño tools</title>
+<meta name="description" content="Separate tools, research and platform snapshots for community preparation and response to the 2026–27 El Niño.">
+<link rel="stylesheet" href="hub.css">
 </head>
 <body>
-<div class="wrap">
-  <nav class="site-nav" aria-label="Site">
-    <span class="brand">El Niño 2026–27</span>
-    <a href="./" aria-current="page">Impact calendar</a>
-    <a href="problems.html">Problem map</a>
-    <a href="research.html">Research</a>
-    <a href="funders.html">Coordination funders</a>
-  </nav>
-
-  <header>
-    <div class="eyebrow">ENSO · Niño-3.4 · January 2026 – December 2027</div>
-    <h1>El Niño 2026–27 impact calendar</h1>
-    <p class="lede">Who gets hit when, how long the event lasts, and what comes after. The red line marks today, <b id="asof-text">6 November 2026</b>, with the event close to its peak. Impact timings come from past strong El Niños (1997–98, 2015–16, 2023–24) laid over the current forecast, so this is a risk map, not a weather forecast.</p>
-  </header>
-
-  <div class="status">
-    <div class="stat here"><span>Phase now</span><b>Near peak</b><span>NOAA CPC (8 Oct): El Niño Advisory, strengthening through the end of the year</span></div>
-    <div class="stat"><span>Niño-3.4, September</span><b>+2.1 °C</b><span>CPC monthly anomaly; parts of the eastern Pacific above +4 °C</span></div>
-    <div class="stat"><span>Chance of record strength (≥ +2.5 °C)</span><b>83%</b><span>CPC, Oct–Dec 2026; 70% for Nov–Jan</span></div>
-    <div class="stat"><span>Duration</span><b>~12 months</b><span>from May–June 2026; WMO: near 100% it lasts through Feb 2027, decaying by spring–summer</span></div>
-  </div>
-
-  <section class="block">
-    <h2>Timeline</h2>
-    <div class="legend" id="legend"></div>
-    <div class="filters" role="group" aria-label="Filter">
-      <button type="button" id="f-all" data-f="all" aria-pressed="true">All</button>
-      <button type="button" id="f-now" data-f="now" aria-pressed="false">Happening now</button>
-      <button type="button" id="f-soon" data-f="soon" aria-pressed="false">Starts in the next 3 months</button>
-      <button type="button" id="f-later" data-f="later" aria-pressed="false">Later in 2027</button>
-      <button type="button" id="f-past" data-f="past" aria-pressed="false">Already past</button>
+<main class="shell">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Super El Niño Response Initiative</p>
+      <h1>One response effort, six separate tools.</h1>
+      <p class="lede">Explore the 2026–27 impact timeline, the problems between forecast and action, the research behind the work, possible coordination funders, and two larger platforms.</p>
     </div>
-    <div class="chart-box"><div class="scroller" id="scroller"><div class="grid" id="grid"><p class="loading">Loading data/impacts.json…</p></div></div></div>
-    <div class="muted small">Faded bars are already past; bars with a red outline are happening now. The ●●● dots show how consistently that impact appeared in past strong events. Click a row to open its description.</div>
+    <p class="hero-note"><strong>Work in progress.</strong><br>Each item has its own folder for now, so the group can test and improve them independently before deciding what should merge.</p>
   </section>
 
-  <section class="block">
-    <h2>Who is hit when</h2>
-    <div class="cards" id="cards"></div>
-  </section>
-
-  <div class="notes">
-    <section>
-      <h2>How reliable is this</h2>
-      <ul>
-        <li><b>The El Niño itself</b> is confirmed and very strong. That is observation, not modelling.</li>
-        <li><b>Peak and decay</b>: the peak is expected November–January. The timing of the return to neutral (spring–summer 2027) and the chance of La Niña in late 2027 come from analogues; the agencies have not stated them yet.</li>
-        <li><b>Regional impacts</b> are probabilistic. In 2015–16 California expected heavy rain and mostly did not get it. Three dots mean "almost always", one means "sometimes".</li>
-        <li><b>The Niño-3.4 curve</b> is schematic: there is one anchor point (September, +2.1 °C from CPC), the rest is interpolation and a forecast spread.</li>
-        <li>Outcomes of seasons that are already over, such as the 2026 Indian monsoon, are not checked against observations here. The page shows the historical risk.</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Sources</h2>
-      <ul>
-        <li><a href="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml">NOAA CPC, ENSO Diagnostic Discussion, 8 October 2026</a>. Next issue 12 November.</li>
-        <li><a href="https://wmo.int/media/news/el-nino-set-become-very-strong-raising-risks-of-extreme-weather-2027">WMO: "El Niño set to become very strong…", September 2026</a></li>
-        <li><a href="https://iri.columbia.edu/our-expertise/climate/forecasts/enso/current/">IRI ENSO forecast (model plume)</a></li>
-        <li><a href="http://www.bom.gov.au/climate/enso/">Australian Bureau of Meteorology, Climate Driver Update</a></li>
-        <li><a href="https://www.climate.gov/enso">NOAA Climate.gov: typical ENSO teleconnections</a></li>
-        <li><a href="https://fews.net/">FEWS NET: food security outlooks</a></li>
-      </ul>
-      <p class="small muted">See the <a href="problems.html">problem map</a> for what stands between these forecasts and effective action, and who is working on it.</p>
-    </section>
+  <h2>Planning and coordination</h2>
+  <div class="grid">
+    <a class="card" href="impact-calendar/">
+      <span class="tag">Timeline</span>
+      <h3>Impact calendar</h3>
+      <p>See when the event and its regional risks may unfold, with current timing, confidence and source notes.</p>
+    </a>
+    <a class="card" href="problem-map/">
+      <span class="tag">Systems map</span>
+      <h3>Problem map</h3>
+      <p>Explore 66 connected obstacles across forecasting, finance, delivery, governance, communication and data.</p>
+    </a>
+    <a class="card" href="research-library/">
+      <span class="tag">Evidence</span>
+      <h3>Research library</h3>
+      <p>Read the annotated source list and follow each item directly into the problems it helps explain.</p>
+    </a>
+    <a class="card" href="coordination-funders/">
+      <span class="tag">Funding map</span>
+      <h3>Coordination funders</h3>
+      <p>Find funders and programmes that support convening, shared data, aligned action, local voice and learning.</p>
+    </a>
   </div>
 
-  <footer>Draft of 6 November 2026. To be updated after the CPC (12 November) and BoM releases. Regional timings are built from climatology and past events, not tuned to this year's models. Data: <a href="data/impacts.json">data/impacts.json</a> (CC BY 4.0). Corrections welcome, see <a href="https://github.com/citizen-infra/senri/blob/main/el-nino/CONTRIBUTING.md">CONTRIBUTING</a>.</footer>
-</div>
-<script src="calendar.js"></script>
+  <h2>Platforms and source snapshots</h2>
+  <div class="grid">
+    <a class="card platform" href="community-platform/">
+      <span class="tag">Community platform</span>
+      <h3>Super El Niño</h3>
+      <p>A contribution, coordination, mapping and open-work platform. Includes a pinned copy of the complete upstream repository.</p>
+    </a>
+    <a class="card osiris" href="osiris/">
+      <span class="tag">Situational awareness</span>
+      <h3>OSIRIS</h3>
+      <p>A separate open-source intelligence and live-map platform, copied here as a pinned upstream source snapshot.</p>
+    </a>
+  </div>
+
+  <footer>Code and data keep their upstream licensing state and notices. See the <a href="https://github.com/citizen-infra/senri">SENRI repository</a>, <a href="README.md">folder notes</a> and <a href="LICENSE-DATA.md">data licence</a>.</footer>
+</main>
 </body>
 </html>
