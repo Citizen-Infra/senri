@@ -64,6 +64,7 @@ available time and resources are `___`.
 ## Provenance
 
 Adapted from the Super El Niño community-platform snapshot at commit
-`87c33fe6d857c63e5157a1c7ea76f84a9a4eeae9` with the upstream owner's
-authorization in [SENRI issue #27](https://github.com/Citizen-Infra/senri/issues/27).
-This shared copy is covered by SENRI's CC BY 4.0 data and text licence.
+`87c33fe6d857c63e5157a1c7ea76f84a9a4eeae9` at the upstream owner's request
+for the integration tracked in [SENRI issue #27](https://github.com/Citizen-Infra/senri/issues/27).
+The source snapshot has no top-level licence; confirm redistribution terms before
+reusing this adaptation outside SENRI.

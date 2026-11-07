@@ -5,6 +5,7 @@ External URLs and fragment identifiers are outside this local file check.
 """
 
 import json
+import re
 import subprocess
 import sys
 from html.parser import HTMLParser
@@ -57,6 +58,16 @@ def check_research_data(root):
             raise ValueError(
                 f"Research resource {resource.get('id', '<missing id>')} lacks: {', '.join(missing)}"
             )
+        blank = sorted(
+            field for field in required
+            if not isinstance(resource[field], str) or not resource[field].strip()
+        )
+        if blank:
+            raise ValueError(
+                f"Research resource {resource.get('id', '<missing id>')} has blank or invalid fields: {', '.join(blank)}"
+            )
+        if not re.fullmatch(r"[0-9a-f]{40}", resource["sourceCommit"]):
+            raise ValueError(f"Research resource {resource['id']} has an invalid sourceCommit")
         if resource["reviewStatus"] not in allowed_statuses:
             raise ValueError(
                 f"Research resource {resource['id']} has unknown reviewStatus {resource['reviewStatus']}"
@@ -66,11 +77,14 @@ def check_research_data(root):
         if resource["reviewStatus"] == "held-for-verification" and resource.get("url"):
             raise ValueError(f"Held research resource {resource['id']} must not have a public-library link")
         if resource.get("url"):
+            if not isinstance(resource["url"], str):
+                raise ValueError(f"Research resource {resource['id']} has an invalid URL")
             url = urlsplit(resource["url"])
             if url.scheme or url.netloc or url.path.startswith("/"):
                 raise ValueError(f"Research resource {resource['id']} must use a local shared-library URL")
+            resource_root = (root / "el-nino" / "research-library" / "resources").resolve()
             target = (root / "el-nino" / "research-library" / unquote(url.path)).resolve()
-            if not target.is_relative_to(root) or not target.is_file():
+            if not target.is_relative_to(resource_root) or not target.is_file():
                 raise ValueError(f"Research resource {resource['id']} links to a missing local file")
         resource_ids.append(resource["id"])
 

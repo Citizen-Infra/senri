@@ -34,7 +34,7 @@ Source snapshot: `RobinHoodO/super-el-nino` at
 | Snapshot artifact | Disposition | Reason |
 | --- | --- | --- |
 | In-app `ResearchLibrary` component and research navigation/styles | Preserve in snapshot only | Historical application code; the shared static library is now the canonical public presentation. |
-| `public/research/deep-research-prompt.md` | Copy into shared methods | Reusable research method with explicit owner authorization in issue #27; it contains no evidence claims. |
+| `public/research/deep-research-prompt.md` | Copy into shared methods | Reusable method included at the upstream owner's request for this integration; it contains no evidence claims. Broader reuse terms still require confirmation. |
 | `public/research/el-nino-research-plan.txt` | Hold for verification | Generated narrative and candidate citations are mixed together. Claims require source-by-source review before promotion. |
 | `public/research/legal.css` | Preserve in snapshot only | Presentation asset for a legacy document that was not eligible for the shared library. |
 | Two generated research documents omitted during migration | Exclude | They contained private meeting or contact material. |
