@@ -67,6 +67,20 @@ a.ptag:hover{border-color:var(--accent)}
 .ptag.sample{color:var(--accent);font-weight:600}
 .first{font-family:var(--f-mono);font-size:11px;background:var(--warm-soft);color:var(--warm);border-radius:3px;padding:2px 6px;font-weight:600}
 
+.resources{display:flex;flex-direction:column;gap:14px;padding-top:6px}
+.resources>div:first-child>p:last-child{max-width:68ch;margin:6px 0 0;color:var(--muted)}
+.resource-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.resource{min-width:0;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:6px}
+.resource h3{margin:8px 0 6px;font-size:16px}
+.resource>p{margin:0;color:var(--muted)}
+.resource-status{display:inline-block;padding:2px 7px;border-radius:3px;background:var(--cool-soft);color:var(--accent);font:600 11px var(--f-mono)}
+.resource details{margin-top:12px;font-size:12.5px}
+.resource summary{cursor:pointer;color:var(--accent);font-weight:600}
+.resource dl{display:grid;grid-template-columns:minmax(90px,auto) minmax(0,1fr);gap:5px 10px;margin:10px 0 0}
+.resource dt{color:var(--muted)}
+.resource dd{min-width:0;margin:0;overflow-wrap:anywhere}
+.resource code{font-family:var(--f-mono);font-size:11px}
+
 .gaps{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 20px}
 .gaps ul{margin:10px 0 0;padding-left:18px}
 .gaps li{margin:8px 0}

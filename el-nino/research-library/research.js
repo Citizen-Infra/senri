@@ -12,6 +12,7 @@ Promise.all([
 
 function start(R, P){
   const M = R.meta;
+  const RESOURCES = R.resources || [];
   const titles = new Map(P.problems.map(p => [p.id, p.title]));
   const THEMES = M.themes;
   let active = 'all';
@@ -25,7 +26,34 @@ function start(R, P){
     ? `<a class="ptag" href="../problem-map/?p=${encodeURIComponent(id)}" title="Open problem ${esc(id)} on the map"><b>${esc(id)}</b>${esc(titles.get(id))}</a>`
     : `<span class="ptag"><b>${esc(id)}</b></span>`;
   $('#gaps').innerHTML = M.gaps.map(g => `<li>${esc(g.text)} <span class="ptags">${g.problems.map(ptag).join('')}</span></li>`).join('');
-  $('#foot').innerHTML = `${esc(M.method)} Data: <a href="../data/research.json">data/research.json</a> (CC BY 4.0). Suggest a source, see <a href="https://github.com/citizen-infra/senri/blob/main/el-nino/CONTRIBUTING.md">CONTRIBUTING</a>.`;
+  $('#foot').innerHTML = `${esc(M.method)} Data: <a href="../data/research.json">data/research.json</a> (CC BY 4.0). See the <a href="../docs/RESEARCH-IMPORTS.md">research import rules</a>, or suggest a source through <a href="https://github.com/citizen-infra/senri/blob/main/el-nino/CONTRIBUTING.md">CONTRIBUTING</a>.`;
+
+  function renderResources(){
+    const labels = {
+      'method-only': 'Method only · not evidence',
+      'held-for-verification': 'Held for verification'
+    };
+    $('#resources').innerHTML = RESOURCES.map(resource => {
+      const heading = resource.url
+        ? `<a href="${esc(resource.url)}">${esc(resource.title)}</a>`
+        : esc(resource.title);
+      return `<article class="resource">
+        <span class="resource-status">${esc(labels[resource.reviewStatus] || resource.reviewStatus)}</span>
+        <h3>${heading}</h3>
+        <p>${esc(resource.description)}</p>
+        <details>
+          <summary>Provenance and reuse</summary>
+          <dl>
+            <dt>Origin</dt><dd>${esc(resource.origin)}</dd>
+            <dt>Source date</dt><dd>${esc(resource.sourceDate)}</dd>
+            <dt>Source path</dt><dd><code>${esc(resource.sourcePath)}</code></dd>
+            <dt>Source commit</dt><dd><code>${esc(resource.sourceCommit)}</code></dd>
+            <dt>Rights</dt><dd>${esc(resource.rights)}</dd>
+          </dl>
+        </details>
+      </article>`;
+    }).join('');
+  }
 
   function renderFilters(){
     const btns = [{id:'all', name:'All themes'}, ...THEMES];
@@ -55,6 +83,6 @@ function start(R, P){
   });
   // A link to one entry (#r-id) shows all themes so the entry exists.
   if (location.hash.startsWith('#r-')) active = 'all';
-  renderFilters(); renderList();
+  renderFilters(); renderList(); renderResources();
   if (location.hash.startsWith('#r-')) { const t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
 }
