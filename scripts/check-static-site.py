@@ -39,6 +39,16 @@ def check_site(root):
         relative = path.relative_to(root)
         if path.is_symlink():
             raise ValueError(f"Pages artifact contains symlink: {relative}")
+        forbidden = {"node_modules", "__pycache__", ".next", ".wrangler", ".sites-runtime", ".gitnexus"}
+        if forbidden.intersection(relative.parts) or path.suffix in {".pyc", ".pyo", ".tsbuildinfo", ".log"}:
+            raise ValueError(f"Pages artifact contains runtime material: {relative}")
+        if path.name.startswith(".env") and path.name not in {".env.example", ".env.sample"}:
+            raise ValueError(f"Pages artifact contains environment values: {relative}")
+        if relative.parts[:4] in {
+            ("el-nino", "osiris", "source", "runs"),
+            ("el-nino", "osiris", "source", "scratch"),
+        }:
+            raise ValueError(f"Pages artifact contains runtime material: {relative}")
         if not path.is_file() or "source" in relative.parts or any(
             part.startswith(".") for part in relative.parts
         ):

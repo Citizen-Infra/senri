@@ -1,0 +1,29 @@
+# Local analysis and static-site assembly
+.gitnexus/
+_site/
+# Installed dependencies, package caches and build/runtime output
+**/node_modules/
+**/__pycache__/
+*.py[cod]
+*.tsbuildinfo
+**/.next/
+**/dist/
+**/out/
+**/.cache/
+**/.npm/
+**/.pnpm-store/
+**/.yarn/cache/
+**/.wrangler/
+**/.sites-runtime/
+**/.venv/
+**/venv/
+*.log
+.DS_Store
+# Local environment values; documented empty/example templates may be tracked
+.env
+.env.*
+!.env.example
+!.env.sample
+# OSIRIS runtime records and disposable experiments, not its source API routes
+/el-nino/osiris/source/runs/
+/el-nino/osiris/source/scratch/
