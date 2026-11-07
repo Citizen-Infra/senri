@@ -1,0 +1,25 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Assemble Pages files
+        run: |
+          mkdir _site
+          rsync -a --exclude '.git' --exclude '.github' --exclude '_site' ./ _site/
+          touch _site/.nojekyll
+      - name: Check static site
+        run: python3 scripts/check-static-site.py _site
