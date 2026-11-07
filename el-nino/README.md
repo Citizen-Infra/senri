@@ -15,7 +15,7 @@ while the group decides what should eventually be integrated. The public launche
 | `community-platform/` | Landing page plus a pinned, source-only `RobinHoodO/super-el-nino` source snapshot | App runs on Cloudflare Workers |
 | `osiris/` | Landing page plus a pinned, source-only `simplifaisoul/osiris` source snapshot | App requires a Next.js server |
 | `data/` | Shared JSON used by the four static tools | Static assets |
-| `docs/` | Methodology and source notes | Documentation |
+| `docs/` | Project strategy, methodology and source notes | Documentation |
 | `shared/` | Navigation shared by the four static tools | Static asset |
 
 The old `problems.html`, `research.html` and `funders.html` paths are redirect shims so existing
@@ -41,7 +41,7 @@ Then open <http://localhost:8000/el-nino/>.
 
 The problem map originated in
 [MaxSemenchuk/el-nino-problem-map](https://github.com/MaxSemenchuk/el-nino-problem-map)
-and was moved into SENRI by its author, Max Semenchuk. See `docs/METHODOLOGY.md` and
+and was moved into SENRI by its author, Max Semenchuk. Group strategy and open questions: `docs/STRATEGY.md`. See `docs/METHODOLOGY.md` and
 `docs/SOURCES.md` for its framing and evidence limits.
 
 ## Updating source snapshots
