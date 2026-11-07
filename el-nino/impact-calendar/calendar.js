@@ -120,7 +120,7 @@ function initMap(D,all,NOWM,mon){
 
   let cur=NOWM;
   function month(m){
-    cur=m;range.value=m;lab.textContent=lab2.textContent=mon(m);back.hidden=m===NOWM;
+    cur=m;range.value=m;lab.textContent=lab2.textContent=mon(m);back.style.visibility=m===NOWM?"hidden":"";
     const v=D.nino34.values[m];nino.textContent=`Niño-3.4 ≈ ${v>0?"+":""}${v.toFixed(1)} °C${m>D.nino34.observedThrough?" (sketch)":""}`;
     document.querySelectorAll(".head .m").forEach(c=>c.classList.toggle("sel",+c.dataset.m===m));
     layers.zones.textContent="";
