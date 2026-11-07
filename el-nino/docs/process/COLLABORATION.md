@@ -10,6 +10,8 @@ another or confusing planning with implementation.
 - Decision history and unresolved product questions live in the
   [Wayfinder map](https://github.com/Citizen-Infra/senri/issues/10) and its child
   issues.
+- The navigable status of those decisions and questions lives in
+  [`QUESTIONS-AND-DECISIONS.md`](QUESTIONS-AND-DECISIONS.md).
 - Bounded research, prototype, and implementation work lives in GitHub issues.
 - Proposed changes live in branches and pull requests until separately approved
   and merged.
@@ -86,4 +88,20 @@ For each of the six documents:
 
 If an approved early document changes, reopen review for every later document
 whose conclusions depend on it.
+
+## Capture working sessions
+
+Do not rely on a chat thread as project memory, and do not copy a raw transcript
+into the repository. At the end of a substantive working session:
+
+1. post one sanitized digest to the Wayfinder map or the affected child issue;
+2. list accepted decisions, open questions, recommendation and rationale,
+   evidence or prototypes, affected specifications, and the next review gate;
+3. update `QUESTIONS-AND-DECISIONS.md` with stable IDs and links;
+4. update the current specification in the same or a linked pull request;
+5. leave private, speculative, or personally identifying conversation out.
+
+This preserves everything needed to resume work while keeping discussion
+navigable for people and agents.
+
 

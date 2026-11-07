@@ -12,6 +12,7 @@ deployment, repository archival, or a merge.
 |---|---|---|
 | [`docs/spec/`](./) | Current approved product behavior and delivery boundary | Private participant or moderation data |
 | [Wayfinder map](https://github.com/Citizen-Infra/senri/issues/10) | Decision history, dependencies, and unresolved questions | Duplicate product specifications |
+| [`QUESTIONS-AND-DECISIONS.md`](../process/QUESTIONS-AND-DECISIONS.md) | Navigable index of accepted decisions, open questions, owners, and review gates | Full duplicate decision text or raw chat transcripts |
 | SENRI issues | One bounded decision, research task, prototype, or implementation slice | Personal data, private reports, or sensitive cases |
 | Pull requests | Reviewable proposals to change specifications or code | Unrelated changes or implicit merge authorization |
 
