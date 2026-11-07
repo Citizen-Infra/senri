@@ -10,6 +10,7 @@ prototype or initiative without mixing their decisions.
 |---|---|---|
 | [`el-nino/spec/`](el-nino/spec/) | Proposed; only document 1 is drafted | Six sequential product-specification documents |
 | [`el-nino/process/`](el-nino/process/) | Proposed | Collaboration, decision memory, and Potato/PStack handoff |
+| [`el-nino/strategy/`](el-nino/strategy/) | Draft v0.1 | Group strategy from the first call (6 Nov 2026) and focus recommendations |
 
 Documentation that explains a source folder itself stays beside that source.
 For example, `el-nino/docs/METHODOLOGY.md` and `el-nino/docs/SOURCES.md` explain
