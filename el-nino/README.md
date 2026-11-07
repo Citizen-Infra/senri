@@ -1,67 +1,59 @@
-# El Niño 2026–27 Problem Map
+# El Niño tools and platform snapshots
 
-A SENRI prototype, moved here from [MaxSemenchuk/el-nino-problem-map](https://github.com/MaxSemenchuk/el-nino-problem-map) by its author, Max Semenchuk.
+The SENRI El Niño collection keeps each prototype or imported platform in a separate folder
+while the group decides what should eventually be integrated. The public launcher is
+<https://citizen-infra.github.io/senri/el-nino/>.
 
-The site has four pages: an **impact calendar** (home page) that shows when and where the 2026–27 El Niño hits, with a marker for today, the **problem map** described below, a **research** reading list whose entries link to the problems they inform (each problem on the map lists the research that cites it), and a list of **coordination funders**. Link to one problem with `problems.html?p=<id>`, for example `problems.html?p=6.1`.
+## Folder layout
 
-An open, argue-with-it inventory of the problems that stand between a very strong El Niño forecast and effective collective action, and of who is working on each one.
+| Folder | Purpose | Runtime |
+| --- | --- | --- |
+| `impact-calendar/` | Event phases and regional impact timing | Static GitHub Pages |
+| `problem-map/` | Problem, organisation and coverage map | Static GitHub Pages |
+| `research-library/` | Annotated sources linked to problem IDs | Static GitHub Pages |
+| `coordination-funders/` | Funders and the problems their work touches | Static GitHub Pages |
+| `community-platform/` | Landing page plus a pinned, complete `RobinHoodO/super-el-nino` source snapshot | App runs on Cloudflare Workers |
+| `osiris/` | Landing page plus a pinned, complete `simplifaisoul/osiris` source snapshot | App requires a Next.js server |
+| `data/` | Shared JSON used by the four static tools | Static assets |
+| `docs/` | Methodology and source notes | Documentation |
+| `shared/` | Navigation shared by the four static tools | Static asset |
 
-It is a map, not a plan. It is meant to help people with experience in facilitation, digital platforms, tools and governance see where the real obstacles are, where uncertainty is largest, and where help is most needed.
+The old `problems.html`, `research.html` and `funders.html` paths are redirect shims so existing
+links continue to work. New links should use the folder URLs.
 
-**Live site: https://citizen-infra.github.io/senri/el-nino/**
+## Run the static tools locally
 
-**Status: first draft, 2026-10-30.** Facts come from public sources and are not independently verified. Anything marked `VERIFY` needs a primary-source check. Scores are one author's judgement.
-
-## What is in it
-
-- **66 problems** in 10 layers plus cross-cutting ones, from forecast skill and trigger design to finance, delivery, data, governance, communication and political economy.
-- Each problem has three labels:
-  - `STRUCTURAL` or `EVENT`: does it exist regardless of this El Niño, or is it created or amplified by it?
-  - `VERIFY`: does a fact in it still need checking?
-  - A **constraint class**: hard, institutional or political.
-- Each problem is scored on the **nature of its uncertainty** (factual, scenario, strategic, normative, structural, random), the **degree** of uncertainty (1 to 3), and its **impact** (1 to 4). Different natures of uncertainty are reduced by different tools, so the score says what kind of work helps.
-- **18 organisations** and **8 open-source projects** linked to the problems they work on or could help with, plus a set of **proposed niches** for a facilitation and platform group, framed as hypotheses.
-- Four views: a force-directed graph of problems and organisations, an uncertainty-by-impact matrix, a filterable table, and a coverage-and-gaps view.
-
-## Coordination funders
-
-`funders.html` lists who pays for coordinating the El Niño response (convening, shared data, aligned finance, local voice, learning, open tools), with each funder linked to the problems it touches. Data: `data/funders.json`. Each problem on the map also shows who could fund work on it, and `problems.html?p=3.3` opens a problem directly.
-
-## Open it
-
-The pages read files in `data/`, so serve this folder:
+The pages fetch JSON, so serve the repository instead of opening the files directly:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then open http://localhost:8000.
+Then open <http://localhost:8000/el-nino/>.
 
-## Repository layout
+## Shared data
 
-```
-index.html, calendar.js, calendar.css   impact calendar (home page, no build step)
-problems.html, app.js, style.css        problem map (D3 force graph, no build step)
-research.html, research.js, research.css   annotated reading list
-funders.html, funders.js, funders.css   coordination funders
-nav.css                                 shared site menu
-data/impacts.json                       calendar content: phases, Niño-3.4 sketch, regional impacts
-data/problems.json                      problem map content: problems, organisations, links
-data/research.json                      reading list: sources, notes, key figures, linked problem ids
-data/funders.json                       funders: who pays for coordination, fit, linked problem ids
-docs/METHODOLOGY.md                     layers, labels, scales, limits
-docs/SOURCES.md                         where facts came from, and what is unchecked
-CONTRIBUTING.md                         how to correct, extend or disagree
-```
+- `data/impacts.json`: event phases, Niño-3.4 sketch and regional impacts
+- `data/problems.json`: problems, organisations and graph links
+- `data/research.json`: annotated sources and linked problem IDs
+- `data/funders.json`: coordination funders, fit and linked problem IDs
 
-## How to help
+The problem map originated in
+[MaxSemenchuk/el-nino-problem-map](https://github.com/MaxSemenchuk/el-nino-problem-map)
+and was moved into SENRI by its author, Max Semenchuk. See `docs/METHODOLOGY.md` and
+`docs/SOURCES.md` for its framing and evidence limits.
 
-Check a `VERIFY` item, add a missing organisation, argue with a score. See [CONTRIBUTING.md](CONTRIBUTING.md).
+## Updating source snapshots
 
-## Origin
-
-The structure comes from a problem inventory built for another high-uncertainty domain, organising elections under war. The layered list, the label scheme and the nature-of-uncertainty scoring transfer directly. The content here is new.
+Each imported platform has a `SNAPSHOT.md` file recording its upstream repository, branch,
+commit and capture date. The copies do not update automatically. When refreshing one, replace
+only its `source/` tree, retain the upstream licence and notices, and update the snapshot record
+in the same change.
 
 ## Licence
 
-Code: MIT, see `LICENSE` (original notice kept, as the repository README asks for reused code). Data and text: CC BY 4.0, see `LICENSE-DATA.md`.
+SENRI code: MIT, see `LICENSE`. SENRI data and text: CC BY 4.0, see `LICENSE-DATA.md`.
+Imported code keeps its upstream licensing state and notices inside its own `source/` folder.
+OSIRIS includes an MIT licence. The captured Super El Niño tree has no top-level licence file,
+so redistribution rights should be confirmed with its owner before this snapshot is treated as a
+reusable package. Map data from OpenStreetMap remains subject to the Open Database License.

@@ -13,7 +13,7 @@ The first prototypes map problems, needs and offers.
 
 Published at https://citizen-infra.github.io/senri/ once GitHub Pages is on.
 
-- [`el-nino/`](el-nino/): impact calendar, problem map, research reading list and coordination funders for the 2026–27 El Niño ([live](https://citizen-infra.github.io/senri/el-nino/)). Code MIT, data CC BY 4.0.
+- [`el-nino/`](el-nino/): a folder-per-tool collection for the 2026–27 El Niño: impact calendar, problem map, research library, coordination funders, the Super El Niño community-platform source, and an OSIRIS source snapshot ([live](https://citizen-infra.github.io/senri/el-nino/)). Imported projects retain their upstream licensing state and notices; SENRI data is CC BY 4.0.
 
 ## What stays out
 
