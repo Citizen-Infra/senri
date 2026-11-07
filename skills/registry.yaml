@@ -1,0 +1,61 @@
+schema_version: 1
+
+policy:
+  default: reference-not-vendor
+  listing_grants_no_authority: true
+  install_or_upgrade_requires_approval: true
+  external_actions_follow_agents_md: true
+  updates_require_pull_request: true
+
+entries:
+  - id: pstack
+    kind: plugin
+    status: optional-execution-tool
+    purpose: Evidence-driven prototypes, plans, implementation, and PR preparation
+    upstream: https://github.com/cursor/plugins/tree/6b0300214a09fd6029cfb7077043125758cd1fd2/pstack
+    version: 0.15.36
+    ref: 6b0300214a09fd6029cfb7077043125758cd1fd2
+    license: MIT
+    license_evidence: pstack/.cursor-plugin/plugin.json
+    install:
+      cursor:
+        - /add-plugin pstack
+        - /setup-pstack
+      claude_code:
+        - /plugin marketplace add cursor/plugins
+        - /plugin install pstack@cursor-plugins
+        - /pstack:setup-pstack
+    project_contract: docs/el-nino/process/PSTACK-PLAYBOOK.md
+    notes:
+      - Verify the installed plugin version before use.
+      - Keep marketplace auto-update off until an update is reviewed.
+
+  - id: wayfinder
+    kind: method
+    status: project-adapted
+    purpose: Shared decision map and one-decision-per-issue planning
+    upstream: https://github.com/mattpocock/skills/tree/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d/skills/engineering/wayfinder
+    ref: 4ae2317ddb22b046e26455e4f9c9b3aaaf62212d
+    license: MIT
+    vendoring: reference-only
+    project_contracts:
+      - https://github.com/Citizen-Infra/senri/issues/10
+      - docs/el-nino/process/QUESTIONS-AND-DECISIONS.md
+
+  - id: app-spec
+    kind: project-method
+    status: required-process
+    purpose: Six sequential product-specification documents
+    upstream: project-native-adaptation
+    project_contract: docs/el-nino/spec/README.md
+    notes:
+      - The repository contract is portable and does not depend on a private workstation path.
+
+  - id: create-prd
+    kind: method
+    status: absorbed-by-app-spec
+    purpose: Iterative Product Requirements drafting
+    project_contract: docs/el-nino/spec/01-product.md
+    notes:
+      - App Spec document 1 is the single Product Requirements source of truth.
+      - Do not create a second PRD workflow.
