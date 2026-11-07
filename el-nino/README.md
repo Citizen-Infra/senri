@@ -12,8 +12,8 @@ while the group decides what should eventually be integrated. The public launche
 | `problem-map/` | Problem, organisation and coverage map | Static GitHub Pages |
 | `research-library/` | Annotated sources linked to problem IDs | Static GitHub Pages |
 | `coordination-funders/` | Funders and the problems their work touches | Static GitHub Pages |
-| `community-platform/` | Landing page plus a pinned, complete `RobinHoodO/super-el-nino` source snapshot | App runs on Cloudflare Workers |
-| `osiris/` | Landing page plus a pinned, complete `simplifaisoul/osiris` source snapshot | App requires a Next.js server |
+| `community-platform/` | Landing page plus a pinned, source-only `RobinHoodO/super-el-nino` source snapshot | App runs on Cloudflare Workers |
+| `osiris/` | Landing page plus a pinned, source-only `simplifaisoul/osiris` source snapshot | App requires a Next.js server |
 | `data/` | Shared JSON used by the four static tools | Static assets |
 | `docs/` | Methodology and source notes | Documentation |
 | `shared/` | Navigation shared by the four static tools | Static asset |
@@ -47,7 +47,7 @@ and was moved into SENRI by its author, Max Semenchuk. See `docs/METHODOLOGY.md`
 
 Each imported platform has a `SNAPSHOT.md` file recording its upstream repository, branch,
 commit and capture date. The copies do not update automatically. When refreshing one, replace
-only its `source/` tree, retain the upstream licence and notices, and update the snapshot record
+only its `source/` tree, apply the recorded exclusions, verify the manifest, retain the upstream licence and notices, and update the snapshot record
 in the same change.
 
 ## Licence
