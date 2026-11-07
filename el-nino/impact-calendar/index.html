@@ -49,6 +49,26 @@
     <div class="muted small">Faded bars are already past; bars with a red outline are happening now. The ●●● dots show how consistently that impact appeared in past strong events. Click a row to open its description.</div>
   </section>
 
+  <section class="block" id="map-block">
+    <div class="map-head">
+      <h2>Where it hits</h2>
+      <div class="map-month" role="group" aria-label="Map month">
+        <label for="map-range" class="eyebrow">Month</label>
+        <input type="range" id="map-range" min="0" max="23" step="1" value="10">
+        <b id="map-label">Nov 2026</b>
+        <button type="button" id="map-today" hidden>Back to today</button>
+      </div>
+    </div>
+    <div class="map-layout">
+      <div class="map-box"><svg id="map" viewBox="0 0 1000 347" role="img" aria-labelledby="map-title"><title id="map-title">World map of El Niño impact areas for the selected month</title></svg></div>
+      <aside class="map-side">
+        <div class="map-side-h"><span id="map-count">0</span> risks active in <span id="map-label2">Nov 2026</span><small id="map-nino"></small></div>
+        <ul id="map-list"></ul>
+      </aside>
+    </div>
+    <div class="muted small">Areas are rough zones taken from past strong El Niños, not forecast boundaries. Move the slider, or click a month in the timeline, to see what is active when. Hover a timeline row to find it on the map; click an area to open its description. The dashed box is the Niño-3.4 region where the event is measured. Map: Natural Earth.</div>
+  </section>
+
   <section class="block">
     <h2>Who is hit when</h2>
     <div class="cards" id="cards"></div>
