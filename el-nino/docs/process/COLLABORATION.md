@@ -104,4 +104,3 @@ into the repository. At the end of a substantive working session:
 This preserves everything needed to resume work while keeping discussion
 navigable for people and agents.
 
-
