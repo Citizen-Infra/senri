@@ -33,7 +33,8 @@ Then open <http://localhost:8000/el-nino/>.
 
 ## Shared data
 
-- `data/impacts.json`: event phases, Niño-3.4 sketch and regional impacts
+- `data/impacts.json`: event phases, Niño-3.4 sketch, regional impacts and rough map areas
+- `data/world-110m.json`: pre-projected world map (Natural Earth 1:110m) for the calendar's "Where it hits" map; regenerate with `tools/make-world.mjs` (needs npm; the site itself has no build step)
 - `data/problems.json`: problems, organisations and graph links
 - `data/research.json`: annotated sources and linked problem IDs
 - `data/funders.json`: coordination funders, fit and linked problem IDs
