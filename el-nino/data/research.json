@@ -24,6 +24,33 @@
       {"text": "Migration and conflict. Almost no recent empirical work; only an unreviewed preprint.", "problems": ["6.10", "9.2"]}
     ]
   },
+  "resources": [
+    {
+      "id": "super-el-nino-deep-research-prompt",
+      "kind": "Research method",
+      "reviewStatus": "method-only",
+      "title": "El Niño deep-research prompt",
+      "description": "A reusable brief for researching current forecasts, regional impacts, local actors, finance, gaps, lessons and do-no-harm considerations. It guides research but is not evidence itself.",
+      "url": "resources/deep-research-prompt.md",
+      "origin": "Super El Niño community platform",
+      "sourcePath": "el-nino/community-platform/source/public/research/deep-research-prompt.md",
+      "sourceCommit": "87c33fe6d857c63e5157a1c7ea76f84a9a4eeae9",
+      "sourceDate": "5 Nov 2026",
+      "rights": "Included in SENRI at the upstream owner's request for this integration. Confirm redistribution terms before reuse outside this repository."
+    },
+    {
+      "id": "super-el-nino-generated-research-output",
+      "kind": "Generated research output",
+      "reviewStatus": "held-for-verification",
+      "title": "Super El Niño generated research output",
+      "description": "Preserved in the pinned source snapshot, but not promoted as evidence. Its claims and candidate citations require source-by-source verification before any item is added to this reading list.",
+      "origin": "Super El Niño community platform",
+      "sourcePath": "el-nino/community-platform/source/public/research/el-nino-research-plan.txt",
+      "sourceCommit": "87c33fe6d857c63e5157a1c7ea76f84a9a4eeae9",
+      "sourceDate": "5 Nov 2026",
+      "rights": "Snapshot-only until evidence review is complete; no public-library link is provided."
+    }
+  ],
   "items": [
     {"id": "wmo-gsco-oct26", "theme": "forecast", "first": true, "status": "checked",
      "title": "WMO Global Seasonal Climate Outlook informs humanitarian action", "who": "WMO", "date": "26 Oct 2026",

@@ -10,7 +10,7 @@ while the group decides what should eventually be integrated. The public launche
 | --- | --- | --- |
 | `impact-calendar/` | Event phases and regional impact timing | Static GitHub Pages |
 | `problem-map/` | Problem, organisation and coverage map | Static GitHub Pages |
-| `research-library/` | Annotated sources linked to problem IDs | Static GitHub Pages |
+| `research-library/` | Annotated sources plus separately labelled research methods and import provenance | Static GitHub Pages |
 | `coordination-funders/` | Funders and the problems their work touches | Static GitHub Pages |
 | `community-platform/` | Landing page plus a pinned, source-only `RobinHoodO/super-el-nino` source snapshot | App runs on Cloudflare Workers |
 | `osiris/` | Landing page plus a pinned, source-only `simplifaisoul/osiris` source snapshot | App requires a Next.js server |
@@ -36,13 +36,15 @@ Then open <http://localhost:8000/el-nino/>.
 - `data/impacts.json`: event phases, Niño-3.4 sketch, regional impacts and rough map areas
 - `data/world-110m.json`: pre-projected world map (Natural Earth 1:110m) for the calendar's "Where it hits" map; regenerate with `tools/make-world.mjs` (needs npm; the site itself has no build step)
 - `data/problems.json`: problems, organisations and graph links
-- `data/research.json`: annotated sources and linked problem IDs
+- `data/research.json`: annotated sources, linked problem IDs, and non-evidence research resources with provenance
 - `data/funders.json`: coordination funders, fit and linked problem IDs
 
 The problem map originated in
 [MaxSemenchuk/el-nino-problem-map](https://github.com/MaxSemenchuk/el-nino-problem-map)
 and was moved into SENRI by its author, Max Semenchuk. Group strategy and open questions: [`docs/el-nino/strategy/STRATEGY.md`](../docs/el-nino/strategy/STRATEGY.md). See `docs/METHODOLOGY.md` and
-`docs/SOURCES.md` for its framing and evidence limits.
+`docs/SOURCES.md` for its framing and evidence limits. Imported research follows
+[`docs/RESEARCH-IMPORTS.md`](docs/RESEARCH-IMPORTS.md), which keeps methods and
+unverified outputs separate from evidence entries.
 
 ## Updating source snapshots
 

@@ -5,6 +5,7 @@ External URLs and fragment identifiers are outside this local file check.
 """
 
 import json
+import re
 import subprocess
 import sys
 from html.parser import HTMLParser
@@ -25,6 +26,74 @@ def reject_json_constant(value):
     raise ValueError(f"non-standard numeric constant {value}")
 
 
+def check_research_data(root):
+    path = root / "el-nino" / "data" / "research.json"
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"), parse_constant=reject_json_constant)
+    except (ValueError, UnicodeError, OSError) as error:
+        raise ValueError(f"Invalid research data: {error}") from error
+
+    items = data.get("items")
+    resources = data.get("resources")
+    if not isinstance(items, list) or not isinstance(resources, list):
+        raise ValueError("Research data must contain items and resources arrays")
+
+    item_ids = [entry.get("id") for entry in items if isinstance(entry, dict)]
+    if len(item_ids) != len(items) or any(not value for value in item_ids):
+        raise ValueError("Every research item must be an object with an id")
+    if len(item_ids) != len(set(item_ids)):
+        raise ValueError("Research item ids must be unique")
+
+    required = {
+        "id", "kind", "reviewStatus", "title", "description", "origin",
+        "sourcePath", "sourceCommit", "sourceDate", "rights",
+    }
+    allowed_statuses = {"method-only", "held-for-verification"}
+    resource_ids = []
+    for resource in resources:
+        if not isinstance(resource, dict):
+            raise ValueError("Every research resource must be an object")
+        missing = sorted(required.difference(resource))
+        if missing:
+            raise ValueError(
+                f"Research resource {resource.get('id', '<missing id>')} lacks: {', '.join(missing)}"
+            )
+        blank = sorted(
+            field for field in required
+            if not isinstance(resource[field], str) or not resource[field].strip()
+        )
+        if blank:
+            raise ValueError(
+                f"Research resource {resource.get('id', '<missing id>')} has blank or invalid fields: {', '.join(blank)}"
+            )
+        if not re.fullmatch(r"[0-9a-f]{40}", resource["sourceCommit"]):
+            raise ValueError(f"Research resource {resource['id']} has an invalid sourceCommit")
+        if resource["reviewStatus"] not in allowed_statuses:
+            raise ValueError(
+                f"Research resource {resource['id']} has unknown reviewStatus {resource['reviewStatus']}"
+            )
+        if resource["reviewStatus"] == "method-only" and not resource.get("url"):
+            raise ValueError(f"Research method {resource['id']} must link to its shared copy")
+        if resource["reviewStatus"] == "held-for-verification" and resource.get("url"):
+            raise ValueError(f"Held research resource {resource['id']} must not have a public-library link")
+        if resource.get("url"):
+            if not isinstance(resource["url"], str):
+                raise ValueError(f"Research resource {resource['id']} has an invalid URL")
+            url = urlsplit(resource["url"])
+            if url.scheme or url.netloc or url.path.startswith("/"):
+                raise ValueError(f"Research resource {resource['id']} must use a local shared-library URL")
+            resource_root = (root / "el-nino" / "research-library" / "resources").resolve()
+            target = (root / "el-nino" / "research-library" / unquote(url.path)).resolve()
+            if not target.is_relative_to(resource_root) or not target.is_file():
+                raise ValueError(f"Research resource {resource['id']} links to a missing local file")
+        resource_ids.append(resource["id"])
+
+    if len(resource_ids) != len(set(resource_ids)):
+        raise ValueError("Research resource ids must be unique")
+    if set(item_ids).intersection(resource_ids):
+        raise ValueError("Research item and resource ids must not overlap")
+
+
 def check_site(root):
     root = root.resolve()
     for name in ("index.html", ".nojekyll"):
@@ -33,6 +102,8 @@ def check_site(root):
     for name in (".git", ".github", "_site"):
         if (root / name).exists():
             raise ValueError(f"Pages artifact contains excluded path {name}")
+
+    check_research_data(root)
 
     counts = {"JavaScript": 0, "JSON": 0, "HTML": 0, "local links": 0}
     for path in sorted(root.rglob("*")):
