@@ -1,9 +1,9 @@
 {
   "meta": {
     "title": "El Niño 2026–27 research",
-    "asOf": "6 November 2026",
+    "asOf": "9 November 2026",
     "intro": "The most useful current reports and studies on the 2026–27 El Niño: forecasting, impacts, anticipatory action, response and finance. Each entry says why it is worth reading, gives its key numbers, and links to the problems on the map it informs.",
-    "method": "Checked means the numbers were verified against the source page itself. For the long WHO and FEWS NET reports, roughly the first 40% of the text was checked word for word and the rest from a summary. Found means the source was located by search but not read in full; treat its description as a pointer, not a claim. Compiled by Claude for this project on 6 November 2026.",
+    "method": "Checked means the numbers were verified against the source page itself. For the long WHO and FEWS NET reports, roughly the first 40% of the text was checked word for word and the rest from a summary. Found means the source was located by search but not read in full; treat its description as a pointer, not a claim. Compiled by Claude for this project on 6 November 2026; updated with checked sources through 9 November 2026.",
     "themes": [
       {"id": "forecast", "name": "Forecasting and monitoring", "note": "Where the strength and timing numbers come from, and how far to trust them."},
       {"id": "impacts", "name": "Food security and impacts", "note": "Where and when harvests, prices and people will be hit. The main point: impacts stretch into 2027–28."},
@@ -81,6 +81,12 @@
      "url": "https://ds.data.jma.go.jp/tcc/tcc/products/elnino/outlook.html",
      "why": "A forecast centre independent of NOAA and ECMWF. Useful for the 'different sources, different signals' problem.",
      "facts": [], "problems": ["1.6"]},
+    {"id": "swe-winter-2627", "theme": "forecast", "status": "checked",
+     "title": "Winter 2026/2027 First Forecast: Super El Niño Drives a Major Weather Divide", "who": "Severe Weather Europe, Andrej Flis", "date": "7 Oct 2026 update",
+     "url": "https://www.severe-weather.eu/long-range-2/winter-2026-2027-first-forecast-super-el-nino-polar-vortex-snow-cold-united-states-canada-europe-fa/",
+     "why": "An accessible visual synthesis of several seasonal forecast systems and historical strong-El Niño patterns. It helps compare regional scenarios, but it is a secondary interpretation rather than an authoritative primary forecast.",
+     "facts": ["The article interprets seasonal-model agreement as a split-flow pattern: warmer conditions in Canada and the northern United States, with a more active southern U.S. storm track", "It describes a milder, wetter large-scale signal for much of Europe while stressing that more precipitation does not by itself imply more snow", "Its snowfall outlook is regional and conditional, with different signals across the southern and central United States, northern North America, European lowlands and high-elevation Alps", "The article treats weaker stratospheric winds around late December and January as a possible Polar Vortex disruption signal, not a prediction of a specific sudden stratospheric warming event"],
+     "problems": ["1.1", "1.2", "8.4"]},
 
     {"id": "fewsnet-oct26", "theme": "impacts", "first": true, "status": "checked",
      "title": "2026–2027 El Niño food security impacts (Special Report)", "who": "FEWS NET", "date": "6 Oct 2026",
